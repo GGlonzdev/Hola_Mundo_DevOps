@@ -35,3 +35,9 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USER }}/hola-mundo:latest
+
+    - name: Deploy to Render
+      run: curl -X POST -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+           https://api.render.com/deploy/srv-xxxxxxxx
+
+       
